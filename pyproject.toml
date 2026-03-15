@@ -1,0 +1,13 @@
+[project]
+name = "huawei-course-doer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-genai>=1.67.0",
+    "pillow>=12.1.1",
+    "playwright>=1.58.0",
+    "python-dotenv>=1.2.2",
+    "tf-playwright-stealth>=1.2.0",
+]
