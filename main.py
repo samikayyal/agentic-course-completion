@@ -7,9 +7,9 @@ if __name__ == "__main__":
         controller.connect()
         controller.open_classlist()
         input(
-            "The browser might prompt you to login or select a class. After you have done that, press Enter to continue..."
+            "The browser might prompt you to login. After you have done that, press Enter to continue..."
         )
-        course_page = controller.goto_class(1)
+        course_page = controller.goto_class(2)
         course_page.wait_for_load_state("domcontentloaded")
 
         agent = Agent(controller)

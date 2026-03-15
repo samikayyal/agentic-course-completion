@@ -310,11 +310,12 @@ class Agent:
                         "4. For videos, skip to the end of the video without watching it. You can do this by clicking on the progress bar at the bottom of the video player. Then wait a bit until it shows completed. "
                         "   - If it still doesn't show completed, try clicking the progress bar again, or try scrolling the video player a bit to trigger any lazy loading. "
                         "Notes: "
-                        "You might have to open up sub-sections to view un-completed parts of the course. Make sure to scroll through all the materials in each section. "
-                        "The sections are usually on the left side of the page, and you can click to open them. "
-                        "Uncompleted parts have an empty progress circle next to them, though you have to open up the sections to see them. "
-                        "If there is an arrow pointing to the right at a section, that means its closed, if the arrow points down, its open. "
-                        "Click on the center of the text of the section to open it. Or on the center of the text of a part to complete it. "
+                        "- You might have to open up sub-sections to view un-completed parts of the course. Make sure to scroll through all the materials in each section. "
+                        "- The sections are usually on the left side of the page, and you can click to open them. "
+                        "- Uncompleted parts have an empty progress circle next to them, though you have to open up the sections to see them. "
+                        "- If there is an arrow pointing to the right at a section, that means its closed, if the arrow points down, its open. "
+                        "- Click on the center of the text of the section to open it. Or on the center of the text of a part to complete it. "
+                        "- DO NOT click on the buttons at the bottom of the page that say 'Previous' and 'Next', those are for navigating between main sections of the course, not for completing the materials. "
                     )
                     self.contents.append(
                         Content(
