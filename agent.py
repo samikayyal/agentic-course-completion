@@ -112,21 +112,21 @@ CUSTOM_TOOL_DECLARATIONS: list[dict[str, Any]] = [
             "required": ["x", "y"],
         },
     },
-    {
-        "name": "scroll_document",
-        "description": "Scrolls the page viewport in a direction.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "direction": {
-                    "type": "string",
-                    "description": "Scroll direction.",
-                    "enum": ["up", "down", "left", "right"],
-                }
-            },
-            "required": ["direction"],
-        },
-    },
+    # {
+    #     "name": "scroll_document",
+    #     "description": "Scrolls the page viewport in a direction.",
+    #     "parameters": {
+    #         "type": "object",
+    #         "properties": {
+    #             "direction": {
+    #                 "type": "string",
+    #                 "description": "Scroll direction.",
+    #                 "enum": ["up", "down", "left", "right"],
+    #             }
+    #         },
+    #         "required": ["direction"],
+    #     },
+    # },
     {
         "name": "scroll_at",
         "description": (
@@ -301,7 +301,7 @@ class Agent:
                         "You are a student who's aim is to complete the Huawei course. "
                         "Your task is to complete the course materials and quizzes, complete the quizzes, and scroll through the course materials, DO NOT watch the videos, skip until the end of them. "
                         "Finish until each part has a green checkmark. "
-                        "Use only these available custom tools: click_at, multiple_clicks, click_material_until_completed, hover_at, scroll_document, scroll_at, wait_x_seconds. "
+                        "Use only these available custom tools: click_at, multiple_clicks, click_material_until_completed, hover_at, scroll_at, wait_x_seconds. "
                         f"The current URL of the course page is: {url}. "
                         "Steps:"
                         "1. Start by going through the sections in order, from top to bottom. Expanding it, then clicking on the parts inside. Each section may contain videos, quizzes, or reading materials. "
@@ -487,15 +487,15 @@ class Agent:
                     actual_x = denormalize_x(args["x"], viewport_width)
                     actual_y = denormalize_y(args["y"], viewport_height)
                     page.mouse.move(actual_x, actual_y)
-                elif fname == "scroll_document":
-                    if args["direction"] == "down":
-                        page.evaluate("window.scrollBy(0, window.innerHeight);")
-                    elif args["direction"] == "up":
-                        page.evaluate("window.scrollBy(0, -window.innerHeight);")
-                    elif args["direction"] == "left":
-                        page.evaluate("window.scrollBy(-window.innerWidth, 0);")
-                    elif args["direction"] == "right":
-                        page.evaluate("window.scrollBy(window.innerWidth, 0);")
+                # elif fname == "scroll_document":
+                #     if args["direction"] == "down":
+                #         page.evaluate("window.scrollBy(0, window.innerHeight);")
+                #     elif args["direction"] == "up":
+                #         page.evaluate("window.scrollBy(0, -window.innerHeight);")
+                #     elif args["direction"] == "left":
+                #         page.evaluate("window.scrollBy(-window.innerWidth, 0);")
+                #     elif args["direction"] == "right":
+                #         page.evaluate("window.scrollBy(window.innerWidth, 0);")
                 elif fname == "scroll_at":
                     actual_x = denormalize_x(args["x"], viewport_width)
                     actual_y = denormalize_y(args["y"], viewport_height)

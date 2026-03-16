@@ -47,6 +47,7 @@ class BrowserController:
         latest_tab.bring_to_front()
 
         button = latest_tab.get_by_text("To Study", exact=True)
+        button.scroll_into_view_if_needed()
         button.wait_for(state="visible", timeout=10000)
 
         try:
